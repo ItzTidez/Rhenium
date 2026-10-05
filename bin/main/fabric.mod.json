@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "rhenium",
+  "version": "1.2.0",
+  "name": "Rhenium",
+  "description": "Performance optimization for block entities, chunk loading, and item lag.",
+  "authors": ["ItzTidez"],
+  "license": "ARR",
+  "environment": "*",
+  "entrypoints": {
+  "main": [ "com.rhenium.RheniumMod" ],
+  "modmenu": [ "com.rhenium.RheniumModMenuIntegration" ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "fabric-api": "*",
+    "minecraft": "26.3"
+  },
+  "suggests": {
+    "modmenu": "*",
+    "cloth-config": "*"
+  },
+  "mixins": ["rhenium.mixins.json"]
+}

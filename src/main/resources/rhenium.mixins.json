@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.rhenium.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "HopperBlockEntityMixin",
+    "ItemEntityMixin"
+  ],
+  "client": [
+    "client.ChestRenderDistanceMixin",
+    "client.ParticleCullMixin",
+    "client.EntityRendererCullMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}
