@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "rhenium",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "name": "Rhenium",
   "description": "Performance optimization for block entities, chunk loading, and item lag.",
   "authors": ["ItzTidez"],
@@ -14,7 +14,7 @@
   "depends": {
     "fabricloader": ">=0.19.5",
     "fabric-api": "*",
-    "minecraft": "~26.3"
+    "minecraft": "~26.1"
   },
   "suggests": {
     "modmenu": "*",

@@ -33,10 +33,10 @@ public class HopperBlockEntityMixin {
         HopperBlockEntityMixin self = (HopperBlockEntityMixin)(Object)blockEntity;
 
         // cooldownTime > 0 means vanilla is already throttling it (found nothing to move)
-        // We extend that further — only tick every 8 ticks instead of every tick
+        // We extend that further — only tick every 12 ticks instead of every tick
         if (self.cooldownTime > 0) {
             self.rhenium$skipCounter++;
-            if (self.rhenium$skipCounter % 8 != 0) {
+            if (self.rhenium$skipCounter % 12 != 0) {
                 ci.cancel();
             }
         } else {

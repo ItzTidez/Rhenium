@@ -1,5 +1,6 @@
 package com.rhenium.mixin;
 
+import com.rhenium.config.RheniumConfig;
 import net.minecraft.world.entity.item.ItemEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -13,12 +14,15 @@ public class ItemEntityMixin {
 
     @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
     private void rhenium$throttleItemTick(CallbackInfo ci) {
+        RheniumConfig cfg = RheniumConfig.get();
+        if (!cfg.enableMod || !cfg.enableItemEntityThrottle) return;
+
         ItemEntity self = (ItemEntity)(Object)this;
 
         // Throttling items stationary on ground
         if (self.onGround() && self.getDeltaMovement().lengthSqr() < 0.001) {
             rhenium$tickCounter++;
-            if (rhenium$tickCounter % 3 != 0) {
+            if (rhenium$tickCounter % 4 != 0) {
                 ci.cancel();
             }
         } else {
