@@ -15,7 +15,7 @@ public class ItemEntityMixin {
     private void rhenium$throttleItemTick(CallbackInfo ci) {
         ItemEntity self = (ItemEntity)(Object)this;
 
-        // Only throttle items that are stationary on the ground
+        // Throttling items stationary on ground
         if (self.onGround() && self.getDeltaMovement().lengthSqr() < 0.001) {
             rhenium$tickCounter++;
             if (rhenium$tickCounter % 3 != 0) {
