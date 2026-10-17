@@ -21,7 +21,7 @@ public class RheniumConfigScreen {
         ConfigCategory general = builder.getOrCreateCategory(Component.literal("General"));
         general.addEntry(eb.startBooleanToggle(Component.literal("Enable Mod"), cfg.enableMod)
                 .setDefaultValue(true)
-                .setTooltip(Component.literal("Master toggle. Disables all optimizations at once."))
+                .setTooltip(Component.literal("Mod Enabled / Disabled"))
                 .setSaveConsumer(val -> cfg.enableMod = val)
                 .build());
 
